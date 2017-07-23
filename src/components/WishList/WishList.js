@@ -1,16 +1,16 @@
 import React from 'react';
 import Product from '../Product';
 
-const ProductList = props => {
+const WishList = props => {
   let products;
 
-  props.productList.length > 0
-  ? products = props.productList.map(product => <Product
+  props.wishList.length > 0
+  ? products = props.wishList.map(product => <Product
     key={product.id}
     {...product}
     addToWishList={props.addToWishList}
     removeFromWishList={props.removeFromWishList}
-    wishList={props.wishList} />)
+    onWishList={props.isOnWishList} />)
   : products = <h2>No results.</h2>
 
     return(
@@ -20,4 +20,4 @@ const ProductList = props => {
     );
 };
 
-export default ProductList;
+export default WishList;
